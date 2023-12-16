@@ -4,6 +4,13 @@
     padding: 0;
 }
 
-.clase__david{
-    border: red 3px dotted;
+.container__general{
+    border: blue 3px dotted;
+    width: 100%;
+    height: 100vh;
+    /* para centrar  */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
