@@ -14,35 +14,35 @@
             <!-- Nombre del Producto -->
             <div class="mb-3">
                 <label for="nombreProducto" class="form-label">Nombre del Producto</label>
-                <input type="text" class="form-control" id="nombreProducto" placeholder="Ingrese el nombre del producto" required>
+                <input type="text" class="form-control" id="id_nombre_producto_html" placeholder="Ingrese el nombre del producto" required>
             </div>
     
             <!-- Categoría del Producto -->
             <div class="mb-3">
                 <label for="categoriaProducto" class="form-label">Categoría del Producto</label>
-                <input type="text" class="form-control" id="categoriaProducto" placeholder="Ingrese la categoría del producto" required>
+                <input type="text" class="form-control" id="id_categoria_producto_html" placeholder="Ingrese la categoría del producto" required>
             </div>
     
             <!-- Precio del Producto -->
             <div class="mb-3">
                 <label for="precioProducto" class="form-label">Precio del Producto</label>
-                <input type="number" class="form-control" id="precioProducto" placeholder="Ingrese el precio del producto" required>
+                <input type="number" class="form-control" id="id_precio_producto_html" placeholder="Ingrese el precio del producto" required>
             </div>
     
             <!-- Cantidad del Producto -->
             <div class="mb-3">
                 <label for="cantidadProducto" class="form-label">Cantidad del Producto</label>
-                <input type="number" class="form-control" id="cantidadProducto" placeholder="Ingrese la cantidad del producto" required>
+                <input type="number" class="form-control" id="id_cantidad_producto_html" placeholder="Ingrese la cantidad del producto" required>
             </div>
     
             <!-- Marca del Producto -->
             <div class="mb-3">
                 <label for="marcaProducto" class="form-label">Marca del Producto</label>
-                <input type="text" class="form-control" id="marcaProducto" placeholder="Ingrese la marca del producto" required>
+                <input type="text" class="form-control" id="id_marca_producto_html" placeholder="Ingrese la marca del producto" required>
             </div>
     
             <!-- Botón de Envío -->
-            <button type="submit" class="btn btn-primary">Guardar Producto</button>
+            <button type="submit" class="btn btn-primary" id="btn_agregar_html">Guardar Producto</button>
         </form>
 
     </div>
@@ -50,7 +50,18 @@
 
         const dataBase= [];
 
-        const newProduct = {"nombre":"", "marca":"", "cantidad":"", "precio":""};
+        const newProduct = {
+                id:'',
+                nombre:"",
+                categoria:'',
+                precio:"",
+                cantidad:"",
+                marca:"",
+            };
+        
+        let editando = false;
+
+        const formularioJs = document.querySelector('#formulario')
 
         function agregarProduct(list, item){
             
